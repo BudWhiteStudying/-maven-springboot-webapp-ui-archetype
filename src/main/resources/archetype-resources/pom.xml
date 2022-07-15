@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.budwhite.studying</groupId>
+        <artifactId>spring-boot-starter-web-parent</artifactId>
+        <version>1.1-SNAPSHOT</version> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <packaging>pom</packaging>
+    <version>${version}</version>
+
+    <properties>
+        <final.application.name>DCK_${camelApplicationName}</final.application.name>
+
+        <!-- SONARQUBE PROJECT-SPECIFIC PROPERTIES -->
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.coverage.exclusions>
+            ${rootArtifactId}-war/**/*,${rootArtifactId}-ear/**/*,
+            ${rootArtifactId}-data/**/*,${rootArtifactId}-model/**/*,
+            ${rootArtifactId}-framework/**/*,
+            ${rootArtifactId}-feature/**/hello/**/*,
+            ${rootArtifactId}-feature/**/something/**/*
+        </sonar.coverage.exclusions>
+        <sonar.scm.provider>git</sonar.scm.provider>
+        <sonar.scm.disabled>true</sonar.scm.disabled>
+    </properties>
+</project>

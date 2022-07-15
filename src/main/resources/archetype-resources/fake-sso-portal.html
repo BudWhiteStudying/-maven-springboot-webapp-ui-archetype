@@ -1,0 +1,56 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<body>
+<div id='content' style='width:100vw;height: 100vh'></div>
+<script>
+    (function () {
+        function post(path, params, method) {
+
+            // The rest of this code assumes you are not using a library.
+            // It can be made less wordy if you use one.
+            const form = document.createElement('form');
+            form.method = method;
+            form.action = path;
+
+            for (let key in params) {
+                if (params.hasOwnProperty(key)) {
+                    const hiddenField = document.createElement('input');
+                    hiddenField.type = 'hidden';
+                    hiddenField.name = key;
+                    hiddenField.value = params[key];
+
+                    form.appendChild(hiddenField);
+                }
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        post('http://localhost:8080/${rootArtifactId}/authentication',
+            {
+                'ABI': '6175',
+                'ABIDESCR': 'Banca Carige',
+                'PR': '1',
+                'CAB': '1400',
+                'RE': '680',
+                'AR': '96',
+                'CL': '8800',
+                'UO': '880',
+                'UODESCR': 'U/ INFORMATICA DISTRIBUITA',
+                'RUO': '0',
+                'AZ': '6175',
+                'RUOLO': '63',
+                'ID': '106552008073538457194',
+                'APPLID': '6175',
+                'NOME': 'Mario',
+                'COGNOME': 'Rossi',
+                'GR': '0',
+                'USER': '1234567'
+
+			
+            }, 'post')
+    })();
+</script>
+</body>
+</html>
