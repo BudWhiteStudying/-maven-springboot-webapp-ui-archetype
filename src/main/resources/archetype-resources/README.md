@@ -9,9 +9,8 @@ Struttura
 
 ${camelApplicationName} è un'applicazione Spring Boot multi-modulo, articolata sui seguenti moduli:
 
-- `client` - contiene l'applicazione client Angular, esposta alla path `/${rootArtifactId}`. Tale
-  applicazione non è di norma accessibile direttamente, ma richiede di seguire il processo di
-  autenticazione previsto dal NIC, dettagliato [sotto](#autenticazione). Benché incorporata in
+- `client` - contiene l'applicazione client Angular, esposta alla path `/${rootArtifactId}`.
+  Benché incorporata in
   questo medesimo progetto Maven, **l'applicazione client Angular è da considerarsi una componente
   del tutto disaccoppiata rispetto alla rispettiva componente server Java**. In particolare si
   suggerisce di sviluppare il codice dell'applicazione Angular in maniera indipendente dal progetto
